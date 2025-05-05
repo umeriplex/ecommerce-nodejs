@@ -28,7 +28,8 @@ async function authorizedPostResquest(req, req, next) {
 
     if(req.body.user && tokenData.id !== req.body.user){
         return res.status(401).json({ statusCode: 401, success: false, message: 'UnAuthorized! Hacker Fuck You _|_' });
-    }else if (/\/users\/([^/]+)\//.test(req.originalUrl)){
+    }
+    else if (/\/users\/([^/]+)\//.test(req.originalUrl)){
 
         const part = req.originalUrl.split('/');
         const usersIndex = part.indexOf('users');

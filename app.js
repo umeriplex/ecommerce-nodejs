@@ -9,6 +9,7 @@ const errorHendler = require('./helpers/error_handler')
 require('dotenv/config');
 var multer = require('multer');
 
+console.log("1");
 
 
 const app = express();
@@ -21,7 +22,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 app.use(cors());
-app.options('*', cors());
 app.use(AuthJwt.expJwt);
 app.use(authorizedPostResquest);
 app.use(errorHendler)
